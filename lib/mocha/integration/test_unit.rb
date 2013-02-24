@@ -20,7 +20,7 @@ if !Test::Unit::TestCase.ancestors.include?(Mocha::API)
         remove_method :run
 
         test_unit_version = begin
-          load 'test/unit/version.rb'
+          require 'test/unit/version'
           Gem::Version.new(Test::Unit::VERSION)
         rescue LoadError
           Gem::Version.new('1.x')
